@@ -82,9 +82,6 @@ export function Hero({ now }: { now: Date }) {
         <div className="bg-dots flex items-center border-t border-line px-5 py-10 sm:px-8 lg:col-span-5 lg:border-t-0 lg:py-16">
           <div className="w-full">
             <SystemInspector />
-            <p className="mt-3 font-mono text-[11px] text-dim">
-              <span className="text-accent">tip:</span> cambia de pestaña o usa ← → para inspeccionar el perfil.
-            </p>
           </div>
         </div>
       </div>

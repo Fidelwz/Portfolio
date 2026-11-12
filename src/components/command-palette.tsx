@@ -13,8 +13,8 @@ import {
   type ReactNode,
 } from "react";
 import { profile, sections } from "@/data/profile";
-import { copyToClipboard, scrollToSection, useModifierKey } from "@/lib/client";
-import { ArrowUpRight, CornerDownLeft, Copy, Hash, Search } from "./icons";
+import { copyToClipboard, openShell, scrollToSection, useModifierKey } from "@/lib/client";
+import { ArrowUpRight, CornerDownLeft, Copy, Hash, Search, Terminal } from "./icons";
 
 type PaletteContextValue = {
   isOpen: boolean;
@@ -101,6 +101,15 @@ function CommandPalette() {
         icon: <Hash size={15} />,
         run: () => scrollToSection(section.id),
       })),
+      {
+        id: "open-shell",
+        group: "Acciones",
+        label: "Abrir terminal",
+        hint: "php artisan · secretos",
+        keywords: "shell terminal consola artisan laravel juego secretos vim",
+        icon: <Terminal size={15} />,
+        run: () => openShell(),
+      },
       {
         id: "copy-email",
         group: "Acciones",

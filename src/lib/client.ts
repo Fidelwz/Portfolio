@@ -24,6 +24,24 @@ export function scrollToSection(id: string) {
   history.replaceState(null, "", id === "inicio" ? window.location.pathname : `#${id}`);
 }
 
+/** Bloquea el scroll de la página mientras hay una ventana modal abierta. */
+export function lockPageScroll(locked: boolean) {
+  document.documentElement.style.overflow = locked ? "hidden" : "";
+}
+
+/** Abre un enlace externo en otra pestaña; los `mailto:` en la misma. */
+export function openUrl(url: string) {
+  if (url.startsWith("mailto:")) window.location.href = url;
+  else window.open(url, "_blank", "noopener,noreferrer");
+}
+
+export const OPEN_SHELL_EVENT = "portfolio:open-shell";
+
+/** Pide a la terminal del inicio que muestre el shell y enfoque la línea de comandos. */
+export function openShell() {
+  window.dispatchEvent(new CustomEvent(OPEN_SHELL_EVENT));
+}
+
 export async function copyToClipboard(text: string) {
   try {
     await navigator.clipboard.writeText(text);

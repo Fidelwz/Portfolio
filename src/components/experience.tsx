@@ -1,4 +1,5 @@
 import { education, experience, type ChangeType, type Experience as Job } from "@/data/profile";
+import { shortHash } from "@/lib/hash";
 import { formatMonths, formatYearMonth, monthsBetween, totalExperienceMonths } from "@/lib/time";
 import { MetaList, Section } from "./section";
 
@@ -8,16 +9,6 @@ const changeTone: Record<ChangeType, string> = {
   agile: "text-accent",
   deploy: "text-amber",
 };
-
-/** Hash corto determinista (FNV-1a) para el motivo visual de `git log`. */
-function shortHash(input: string) {
-  let hash = 0x811c9dc5;
-  for (let i = 0; i < input.length; i++) {
-    hash ^= input.charCodeAt(i);
-    hash = Math.imul(hash, 0x01000193);
-  }
-  return (hash >>> 0).toString(16).padStart(8, "0").slice(0, 7);
-}
 
 function Badge({ children }: { children: string }) {
   return (

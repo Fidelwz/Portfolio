@@ -8,6 +8,7 @@ Quería que se sintiera como mi entorno de trabajo en Fedora: oscuro pero sin ne
 
 - Una paleta de comandos con `Ctrl + K` para moverse entre secciones, copiar mi correo o abrir mis redes.
 - Una terminal en el inicio con tres vistas de mi perfil: `systemctl status`, `fastfetch` y un `stack.yml`.
+- Un shell de verdad dentro de esa terminal. Con `php artisan` se recorre el portafolio como si fuera una app de Laravel: `route:list` lista las secciones, `migrate:status` mi carrera y `tinker` deja consultar mi perfil. También tiene nueve secretos escondidos para quien conozca los clásicos de Linux.
 - Mi experiencia contada como un `git log`, con lo que hice en cada empresa, la arquitectura y las tecnologías que usé.
 - Mis repositorios más recientes, cargados en vivo desde la API de GitHub.
 - Las tecnologías que manejo agrupadas por área, sin barras de porcentaje.
