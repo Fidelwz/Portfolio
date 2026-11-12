@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────────────────────
+# Solo se versiona lo necesario para que Vercel instale y compile:
+# src/, public/, package.json, pnpm-lock.yaml y la configuración
+# (next.config.ts, tsconfig.json, eslint.config.mjs).
+# ─────────────────────────────────────────────────────────────
+
+# Dependencias: Vercel las instala desde pnpm-lock.yaml
+/node_modules
+/.pnp
+.pnp.*
+.pnpm-store/
+.yarn/
+
+# Build y caché de Next.js: Vercel compila en su propio servidor
+/.next/
+/out/
+/build/
+/dist/
+.turbo/
+.swc/
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing y QA
+/coverage/
+/playwright-report/
+/test-results/
+
+# Variables de entorno: se configuran en Vercel → Settings → Environment Variables
+.env*
+!.env.example
+
+# Vercel CLI
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Documentos personales en la raíz (el CV no se publica)
+/*.pdf
+
+# Archivos de agentes de IA y editores
+AGENTS.md
+CLAUDE.md
+.claude/
+.cursor/
+.vscode/
+.idea/
+*.swp
+*~
+
+# Sistema operativo y certificados
+.DS_Store
+Thumbs.db
+*.pem
